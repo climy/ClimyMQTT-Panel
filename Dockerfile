@@ -7,9 +7,10 @@ COPY files/ /
 RUN apk update && \
 	apk add --no-cache python py-paho-mqtt py-pillow libstdc++ make rsync g++ \
 		ttf-freefont ttf-opensans ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family ttf-droid ttf-liberation ttf-linux-libertine \
-		graphicsmagick-dev zlib-dev freetype-dev mosquitto-dev python-dev json-c-dev python2-dev && \
-WORKDIR /root/rpi-rgb-led-matrix
-RUN		HARDWARE_DESC=adafruit-hat-pwm make && \
+		graphicsmagick-dev zlib-dev freetype-dev mosquitto-dev python-dev json-c-dev python2-dev
+WORKDIR /home/pi/rpi-rgb-led-matrix
+RUN		apk update && \
+                HARDWARE_DESC=adafruit-hat-pwm make && \
 		mkdir -p /usr/local/include/rgbmatrix && \
 		cp include/* /usr/local/include/rgbmatrix && \
 		cp lib/librgbmatrix.* /usr/local/lib && \
