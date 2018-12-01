@@ -10,7 +10,7 @@ RUN apk update && \
 		graphicsmagick-dev zlib-dev freetype-dev mosquitto-dev python-dev json-c-dev python2-dev
 WORKDIR /home/pi/rpi-rgb-led-matrix
 RUN		apk update && \
-                HARDWARE_DESC=adafruit-hat-pwm make && \
+               HARDWARE_DESC=adafruit-hat-pwm make && \
 		mkdir -p /usr/local/include/rgbmatrix && \
 		cp include/* /usr/local/include/rgbmatrix && \
 		cp lib/librgbmatrix.* /usr/local/lib && \
