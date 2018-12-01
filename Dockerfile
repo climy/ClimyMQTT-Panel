@@ -9,6 +9,7 @@ RUN apk update && \
 		ttf-freefont ttf-opensans ttf-dejavu ttf-inconsolata ttf-ubuntu-font-family ttf-droid ttf-liberation ttf-linux-libertine \
 		graphicsmagick-dev zlib-dev freetype-dev mosquitto-dev python-dev json-c-dev python2-dev
 WORKDIR /home/pi/rpi-rgb-led-matrix
+
 RUN		apk update && \
                HARDWARE_DESC=adafruit-hat-pwm make && \
 		mkdir -p /usr/local/include/rgbmatrix && \
